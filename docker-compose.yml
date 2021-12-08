@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+      - '1433:1433'
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Secret1234
+    volumes:
+      - type: bind
+        source: ./data
+        target: /var/opt/mssql/data
+      - type: bind
+        source: ./backups
+        target: /var/opt/mssql/backups
+      - type: bind
+        source: ./scripts
+        target: /scripts
+    command: /scripts/load-databases.sh
