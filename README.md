@@ -27,7 +27,7 @@ Use below connection information to login.
 Server: localhost
 Authentication Type: SQL Login
 User name: sa
-Password: ABC123DEF
+Password: ABC123def
 ```
 
 ## Author
